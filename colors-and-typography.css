@@ -1,0 +1,18 @@
+:root{
+  --cg-navy: #0B2545;
+  --cg-teal: #00B3A6;
+  --cg-lime: #7ED957;
+  --cg-amber: #FF9F1C;
+  --cg-crimson: #E63946;
+  --cg-neutral-light: #F4F6F8;
+  --cg-neutral-dark: #2B2F36;
+}
+
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; color: var(--cg-neutral-dark); }
+.h1 { font-family: "Poppins", "Inter", system-ui, sans-serif; font-weight: 700; }
+.p { font-family: "Roboto", "Noto Sans", system-ui, sans-serif; font-weight: 400; }
+
+.risk-red { color: var(--cg-crimson); background: rgba(230,57,70,0.06); }
+.risk-orange { color: var(--cg-amber); background: rgba(255,159,28,0.06); }
+.risk-yellow { color: #2B2F36; background: rgba(230,223,168,0.06); }
+.risk-green { color: var(--cg-lime); background: rgba(126,217,87,0.06); }

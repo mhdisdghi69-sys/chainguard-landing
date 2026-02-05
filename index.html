@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChainGuard AI — محافظ تراکنش‌های شما</title>
+  <link rel="stylesheet" href="colors-and-typography.css">
+  <style>
+    body { margin:0; background:#ffffff; color:#2B2F36; }
+    header{display:flex;align-items:center;gap:20px;padding:18px 24px;border-bottom:1px solid #f0f0f0;}
+    .hero{max-width:980px;margin:48px auto;padding:0 20px;}
+    .cta{background:var(--cg-teal);color:white;padding:12px 18px;border-radius:8px;text-decoration:none;}
+    .form-inline{display:flex;gap:8px;margin-top:18px;}
+    input[type="email"]{padding:10px;border:1px solid #ddd;border-radius:6px;flex:1;}
+  </style>
+</head>
+<body>
+  <header>
+    <!-- لوگو افقی -->
+    <div style="width:220px;height:auto;">
+      <!-- اگر فایل SVG را در همان پوشه قرار دادی، از تگ <img> استفاده کن -->
+      <img src="lockup-horizontal.svg" alt="ChainGuard AI" style="width:100%;height:auto;">
+    </div>
+    <nav style="margin-left:auto;display:flex;gap:16px;align-items:center;">
+      <a href="#features" style="color:#2B2F36;text-decoration:none;">امکانات</a>
+      <a href="#pricing" style="color:#2B2F36;text-decoration:none;">قیمت</a>
+      <a href="#contact" style="background:var(--cg-teal);color:white;padding:10px 14px;border-radius:8px;text-decoration:none;">شروع کنید</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <h1 class="h1">ChainGuard AI — از هر تراکنش محافظت کنید</h1>
+    <p class="p">اعتبارسنجی آدرس و امتیازدهی ریسک با هوش مصنوعی برای تمام بلاکچین‌ها. آدرس را وارد کنید و قبل از ارسال بدانید امن است یا خیر.</p>
+
+    <!-- فرم ایمیل (نمونه؛ بعداً کد Mailchimp را جایگزین کن) -->
+    <div style="margin-top:24px;">
+      <form id="emailForm" action="#" method="post" onsubmit="alert('ایمیل ثبت شد (نمونه)');return false;">
+        <div class="form-inline">
+          <input type="email" id="email" placeholder="ایمیل خود را وارد کنید" required>
+          <button class="cta" type="submit">عضویت در بتا</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- نمونهٔ اعتبارسنجی آدرس (ظاهر) -->
+    <section id="validator" style="margin-top:36px;">
+      <label for="address">بررسی آدرس</label>
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <input id="address" placeholder="آدرس کیف پول را اینجا وارد کنید" style="flex:1;padding:10px;border:1px solid #ddd;border-radius:6px;">
+        <button class="cta" onclick="alert('این یک نمونه است. بعداً به API متصل می‌شود')">بررسی آدرس</button>
+      </div>
+      <div id="result" style="margin-top:12px;"></div>
+    </section>
+  </main>
+
+  <footer style="text-align:center;padding:24px 12px;border-top:1px solid #f0f0f0;">
+    © ChainGuard AI — All rights reserved.
+  </footer>
+</body>
+</html>
