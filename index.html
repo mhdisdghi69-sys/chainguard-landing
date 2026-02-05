@@ -5,176 +5,103 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Chainguard — Secure supply chain</title>
 
-  <!-- SEO and Social Preview -->
-  <meta name="description" content="Chainguard landing — secure supply chain tooling for modern teams.">
+  <!-- SEO -->
+  <meta name="description" content="Chainguard — secure supply chain tooling for modern teams.">
   <meta property="og:title" content="Chainguard — Secure supply chain">
   <meta property="og:description" content="Ship confidently with Chainguard-grade protections and fast developer workflows.">
-  <meta property="og:image" content="https://YOUR_VERCEL_DOMAIN/og-image.png">
-  <meta property="og:url" content="https://YOUR_VERCEL_DOMAIN">
+  <meta property="og:image" content="/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Preload font (optional) -->
-  <!-- Put your font file at /fonts/inter-var.woff2 or remove this line -->
-  <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-
-  <!-- Critical CSS inlined for fast first paint -->
-  <style>
-    :root{
-      --bg:#ffffff; --muted:#6b7280; --text:#0f172a;
-      --accent1:#7c3aed; --accent2:#06b6d4;
-    }
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;}
-    body{background:linear-gradient(180deg,#fff 0%, #fbfdff 100%); color:var(--text); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
-    .container{max-width:1100px;margin:0 auto;padding:48px 20px;position:relative;}
-    .hero{padding:72px 0; position:relative; overflow:hidden;}
-    h1{font-size:clamp(28px,5vw,56px);line-height:1.02;margin:0 0 12px;font-weight:800;letter-spacing:-0.02em;}
-    p.lead{font-size:clamp(15px,2.2vw,18px);color:var(--muted);margin:0 0 22px;max-width:720px;}
-    .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:8px;}
-    .cta{
-      display:inline-block;padding:12px 26px;border-radius:12px;
-      background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;text-decoration:none;
-      box-shadow:0 8px 30px rgba(124,58,237,.18);transition:transform .18s ease,box-shadow .18s;
-    }
-    .cta:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(124,58,237,.28);}
-    .secondary{color:var(--text);text-decoration:underline;background:none;border:none;padding:8px 0;font-weight:600;cursor:pointer;}
-    /* Floating blurred shapes */
-    .bg-blob{position:absolute;inset:0;pointer-events:none;z-index:0;}
-    .blob{position:absolute;border-radius:50%;filter:blur(60px) saturate(120%);opacity:.6;mix-blend-mode:screen;}
-    .blob.one{width:420px;height:420px;left:-120px;top:-80px;background:var(--accent1);}
-    .blob.two{width:360px;height:360px;right:-120px;bottom:-80px;background:var(--accent2);}
-    /* Fade up animation */
-    .fade-up{opacity:0;transform:translateY(18px);animation:fadeUp .72s ease-out forwards;}
-    .fade-up.delay{animation-delay:.18s;}
-    @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
-    /* Signup form */
-    #signup{margin-top:36px;padding:28px;border-radius:14px;background:rgba(255,255,255,0.6);box-shadow:0 6px 30px rgba(15,23,42,0.04);display:flex;gap:12px;align-items:center;max-width:760px;}
-    #mc-email{flex:1;padding:12px 14px;border-radius:10px;border:1px solid #e6eef6;font-size:15px;}
-    #mc-submit{border:none;cursor:pointer;}
-    .small{font-size:13px;color:var(--muted);margin-top:10px;}
-    /* Footer */
-    footer{padding:28px 0;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid #f1f5f9;margin-top:48px;}
-    /* Responsive */
-    @media (max-width:640px){
-      .actions{flex-direction:column;align-items:flex-start;}
-      #signup{flex-direction:column;align-items:stretch;}
-    }
-    /* Accessibility helper */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <main>
-    <section class="container hero" aria-label="Hero">
-      <div class="bg-blob" aria-hidden="true">
+
+    <!-- HERO SECTION -->
+    <section class="container hero">
+      <div class="bg-blob">
         <div class="blob one"></div>
         <div class="blob two"></div>
       </div>
 
       <h1 class="fade-up">Secure supply chain, simplified</h1>
-      <p class="lead fade-up delay">Ship confidently with Chainguard-grade protections and fast developer workflows. Minimal friction, maximum assurance.</p>
+      <p class="lead fade-up delay">
+        Secure your code from supply chain attacks with curated, enterprise-grade protections and streamlined developer workflows.
+      </p>
 
-      <div class="actions fade-up delay" style="animation-delay:.36s">
+      <div class="actions fade-up delay2">
         <a class="cta" href="#signup">Get early access</a>
         <a class="secondary" href="/docs">Read docs</a>
       </div>
 
-      <!-- Signup block -->
-      <div id="signup" aria-labelledby="signup-heading" class="fade-up" style="animation-delay:.5s">
-        <div style="flex:1">
-          <h2 id="signup-heading" style="margin:0 0 8px;font-size:16px;">Join the waitlist</h2>
-          <form id="mc-form" novalidate>
-            <label for="mc-email" class="sr-only">Email address</label>
-            <div style="display:flex;gap:12px;align-items:center;">
-              <input id="mc-email" name="EMAIL" type="email" placeholder="Your email" required aria-required="true">
-              <button id="mc-submit" class="cta" type="submit">Join waitlist</button>
-            </div>
-          </form>
-          <p id="mc-feedback" role="status" aria-live="polite" class="small" style="margin-top:8px;">We’ll never share your email.</p>
-        </div>
+      <!-- SIGNUP FORM -->
+      <div id="signup" class="signup fade-up delay3">
+        <form id="mc-form">
+          <label for="mc-email" class="sr-only">Email</label>
+          <input id="mc-email" name="EMAIL" type="email" placeholder="Your email" required>
+          <button id="mc-submit" class="cta" type="submit">Join waitlist</button>
+        </form>
+        <p id="mc-feedback" class="small">We’ll never share your email.</p>
       </div>
     </section>
 
-    <!-- Optional features area -->
-    <section class="container" aria-label="Features">
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
-        <div style="padding:18px;border-radius:12px;background:#fff;border:1px solid #f1f5f9;">
+    <!-- FEATURES -->
+    <section class="container features">
+      <div class="features-grid">
+
+        <div class="features-card">
           <strong>Supply chain scanning</strong>
-          <p class="small" style="margin:8px 0 0;">Automated artifact scanning and provenance verification for CI pipelines.</p>
+          <p>Identify risk in your dependencies and processes with curated CVE data.</p>
         </div>
-        <div style="padding:18px;border-radius:12px;background:#fff;border:1px solid #f1f5f9;">
+
+        <div class="features-card">
           <strong>Developer friendly</strong>
-          <p class="small" style="margin:8px 0 0;">Integrates with existing workflows and minimal onboarding friction.</p>
+          <p>Integrates with your existing tools and workflows.</p>
         </div>
-        <div style="padding:18px;border-radius:12px;background:#fff;border:1px solid #f1f5f9;">
+
+        <div class="features-card">
           <strong>Enterprise ready</strong>
-          <p class="small" style="margin:8px 0 0;">Role-based access, audit logs, and policy enforcement at scale.</p>
+          <p>Supports single sign-on and advanced permissions.</p>
         </div>
+
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-      <div>Built and updated by <strong>Mahdi</strong>. Design enhancements by <strong>Copilot</strong>.</div>
-      <div style="margin-top:6px;">© <span id="year"></span> Chainguard</div>
+      <div>Built by <strong>Mahdi</strong>. Enhanced with Copilot.</div>
+      <div class="small">© <span id="year"></span> Chainguard</div>
     </footer>
+
   </main>
 
-  <!-- Inline scripts -->
   <script>
     // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Mailchimp AJAX submission
-    // Replace MAILCHIMP_POST_URL with your Mailchimp form action URL if you want serverless direct post.
-    // If you prefer the default Mailchimp embed, replace this logic with the form action attribute.
-    const mcForm = document.getElementById('mc-form');
-    const mcEmail = document.getElementById('mc-email');
-    const mcFeedback = document.getElementById('mc-feedback');
+    // Simple local waitlist storage (replace with Mailchimp later)
+    const form = document.getElementById("mc-form");
+    const email = document.getElementById("mc-email");
+    const feedback = document.getElementById("mc-feedback");
 
-    mcForm.addEventListener('submit', async function(e){
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const email = mcEmail.value.trim();
-      if(!email || !/^\S+@\S+\.\S+$/.test(email)){
-        mcFeedback.textContent = 'Please enter a valid email address.';
-        return;
-      }
-      mcFeedback.textContent = 'Submitting...';
-      // If you have a Mailchimp form action URL, you can POST to it directly.
-      // Example: const MAILCHIMP_POST_URL = 'https://<dc>.api.mailchimp.com/subscribe/post?u=XXX&id=YYY';
-      // For privacy and CORS reasons, many Mailchimp endpoints require form submission via a hidden iframe or server proxy.
-      // Below is a safe fallback that opens the Mailchimp form in a new tab if you set MAILCHIMP_URL.
-      const MAILCHIMP_URL = ''; // <-- Replace with your Mailchimp form action URL if available
-      if(MAILCHIMP_URL){
-        // open in new tab with email prefilled if Mailchimp supports query param
-        const url = MAILCHIMP_URL + '&EMAIL=' + encodeURIComponent(email);
-        window.open(url, '_blank');
-        mcFeedback.textContent = 'Thanks — check your email to confirm.';
-        mcEmail.value = '';
+      const value = email.value.trim();
+
+      if (!value || !/^\S+@\S+\.\S+$/.test(value)) {
+        feedback.textContent = "Please enter a valid email.";
         return;
       }
 
-      // If no Mailchimp URL provided, store locally and show success (developer can replace with server endpoint)
-      try{
-        // Local fallback: store in localStorage for manual retrieval
-        const list = JSON.parse(localStorage.getItem('chainguard_waitlist') || '[]');
-        list.push({email: email, ts: Date.now()});
-        localStorage.setItem('chainguard_waitlist', JSON.stringify(list));
-        mcFeedback.textContent = 'Thanks — your email is saved locally. Replace with Mailchimp URL to collect centrally.';
-        mcEmail.value = '';
-      }catch(err){
-        mcFeedback.textContent = 'Submission failed. Try again later.';
-      }
+      const list = JSON.parse(localStorage.getItem("waitlist") || "[]");
+      list.push({ email: value, ts: Date.now() });
+      localStorage.setItem("waitlist", JSON.stringify(list));
+
+      feedback.textContent = "Thanks — you're on the waitlist!";
+      email.value = "";
     });
   </script>
-
-  <!-- Analytics placeholder -->
-  <!-- Replace PLAUSIBLE_DOMAIN with your domain or add Google Analytics snippet instead -->
-  <!-- <script async defer data-domain="PLAUSIBLE_DOMAIN" src="https://plausible.io/js/plausible.js"></script> -->
-
-  <!-- Sentry placeholder -->
-  <!-- <script src="https://browser.sentry-cdn.com/7.x.x/bundle.min.js" crossorigin="anonymous"></script>
-  <script>
-    Sentry.init({ dsn: 'YOUR_SENTRY_DSN', tracesSampleRate: 0.0 });
-  </script> -->
 
 </body>
 </html>
