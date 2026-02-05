@@ -5,103 +5,312 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Chainguard — Secure supply chain</title>
 
-  <!-- SEO -->
+  <!-- SEO and Social Preview -->
   <meta name="description" content="Chainguard — secure supply chain tooling for modern teams.">
   <meta property="og:title" content="Chainguard — Secure supply chain">
   <meta property="og:description" content="Ship confidently with Chainguard-grade protections and fast developer workflows.">
-  <meta property="og:image" content="/og-image.png">
+  <meta property="og:image" content="https://YOUR_VERCEL_DOMAIN/og-image.png">
+  <meta property="og:url" content="https://YOUR_VERCEL_DOMAIN">
   <meta name="twitter:card" content="summary_large_image">
 
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Preload font optional -->
+  <!-- <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin> -->
 </head>
-
 <body>
-  <main>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <!-- Logo placeholder -->
+        <a href="/" class="logo" aria-label="Chainguard home">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect width="24" height="24" rx="6" fill="#7c3aed"></rect>
+            <path d="M6 12h12" stroke="#fff" stroke-width="1.5" stroke-linecap="round"></path>
+          </svg>
+          <span class="brand-text">Chainguard</span>
+        </a>
+      </div>
 
-    <!-- HERO SECTION -->
-    <section class="container hero">
-      <div class="bg-blob">
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="/docs">Docs</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+        <a class="cta small" href="#signup">Get early access</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" aria-label="Hero">
+      <div class="bg-blob" aria-hidden="true">
         <div class="blob one"></div>
         <div class="blob two"></div>
+        <div class="blob three"></div>
       </div>
 
-      <h1 class="fade-up">Secure supply chain, simplified</h1>
-      <p class="lead fade-up delay">
-        Secure your code from supply chain attacks with curated, enterprise-grade protections and streamlined developer workflows.
-      </p>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <h1 class="fade-up">Secure supply chain, simplified</h1>
+          <p class="lead fade-up delay">Secure your code from supply chain attacks with curated, enterprise-grade protections and streamlined developer workflows.</p>
 
-      <div class="actions fade-up delay2">
-        <a class="cta" href="#signup">Get early access</a>
-        <a class="secondary" href="/docs">Read docs</a>
+          <div class="actions fade-up delay2">
+            <a class="cta" href="#signup">Get early access</a>
+            <a class="secondary" href="/docs">Read docs</a>
+          </div>
+
+          <div id="signup" class="signup fade-up delay3" aria-labelledby="signup-heading">
+            <h2 id="signup-heading" class="sr-only">Join the waitlist</h2>
+            <form id="mc-form" class="mc-form" novalidate>
+              <label for="mc-email" class="sr-only">Email address</label>
+              <input id="mc-email" name="EMAIL" type="email" placeholder="Your email" required aria-required="true">
+              <button id="mc-submit" class="cta" type="submit">Join waitlist</button>
+            </form>
+            <p id="mc-feedback" role="status" aria-live="polite" class="small">We’ll never share your email.</p>
+          </div>
+        </div>
+
+        <div class="hero-visual fade-up delay4" aria-hidden="true">
+          <!-- Placeholder visual, replace with screenshot or illustration -->
+          <div class="visual-card">
+            <div class="visual-header">Chainguard Dashboard</div>
+            <div class="visual-body">
+              <div class="visual-line short"></div>
+              <div class="visual-line long"></div>
+              <div class="visual-line medium"></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- SIGNUP FORM -->
-      <div id="signup" class="signup fade-up delay3">
-        <form id="mc-form">
-          <label for="mc-email" class="sr-only">Email</label>
-          <input id="mc-email" name="EMAIL" type="email" placeholder="Your email" required>
-          <button id="mc-submit" class="cta" type="submit">Join waitlist</button>
-        </form>
-        <p id="mc-feedback" class="small">We’ll never share your email.</p>
+    <!-- TRUSTED BY -->
+    <section class="container trusted" aria-label="Trusted by">
+      <div class="trusted-inner">
+        <div class="trusted-title small muted">Trusted by</div>
+        <div class="trusted-logos">
+          <div class="logo-pill">Acme</div>
+          <div class="logo-pill">FinCo</div>
+          <div class="logo-pill">DevCorp</div>
+          <div class="logo-pill">CloudOps</div>
+        </div>
       </div>
     </section>
 
     <!-- FEATURES -->
-    <section class="container features">
+    <section id="features" class="container features" aria-label="Features">
+      <h2 class="section-title fade-up">What you get</h2>
       <div class="features-grid">
+        <article class="features-card fade-up delay">
+          <h3>Supply chain scanning</h3>
+          <p>Identify risk in your dependencies and processes with curated CVE data and automated alerts.</p>
+        </article>
 
-        <div class="features-card">
-          <strong>Supply chain scanning</strong>
-          <p>Identify risk in your dependencies and processes with curated CVE data.</p>
-        </div>
+        <article class="features-card fade-up delay2">
+          <h3>Developer friendly</h3>
+          <p>Integrates with CI, Git, and package managers with minimal friction and clear remediation steps.</p>
+        </article>
 
-        <div class="features-card">
-          <strong>Developer friendly</strong>
-          <p>Integrates with your existing tools and workflows.</p>
-        </div>
+        <article class="features-card fade-up delay3">
+          <h3>Policy enforcement</h3>
+          <p>Define and enforce policies across teams with audit logs and role-based controls.</p>
+        </article>
 
-        <div class="features-card">
-          <strong>Enterprise ready</strong>
-          <p>Supports single sign-on and advanced permissions.</p>
-        </div>
-
+        <article class="features-card fade-up delay4">
+          <h3>Enterprise ready</h3>
+          <p>Single sign-on, advanced permissions, and compliance reporting for regulated environments.</p>
+        </article>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer>
-      <div>Built by <strong>Mahdi</strong>. Enhanced with Copilot.</div>
-      <div class="small">© <span id="year"></span> Chainguard</div>
-    </footer>
+    <!-- PRICING -->
+    <section id="pricing" class="container pricing" aria-label="Pricing">
+      <h2 class="section-title fade-up">Pricing</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card fade-up delay">
+          <div class="price-header">
+            <strong>Starter</strong>
+            <div class="price">Free</div>
+          </div>
+          <ul>
+            <li>Basic scanning</li>
+            <li>Community support</li>
+            <li>Up to 5 projects</li>
+          </ul>
+          <a class="cta" href="#signup">Get started</a>
+        </div>
 
+        <div class="pricing-card featured fade-up delay2">
+          <div class="price-header">
+            <strong>Pro</strong>
+            <div class="price">$29 / mo</div>
+          </div>
+          <ul>
+            <li>Advanced scanning</li>
+            <li>Priority support</li>
+            <li>Unlimited projects</li>
+          </ul>
+          <a class="cta" href="#signup">Start trial</a>
+        </div>
+
+        <div class="pricing-card fade-up delay3">
+          <div class="price-header">
+            <strong>Enterprise</strong>
+            <div class="price">Custom</div>
+          </div>
+          <ul>
+            <li>SAML SSO</li>
+            <li>Dedicated support</li>
+            <li>Onboarding & audits</li>
+          </ul>
+          <a class="cta" href="/contact">Contact sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="container testimonials" aria-label="Testimonials">
+      <h2 class="section-title fade-up">What customers say</h2>
+      <div class="testimonials-grid">
+        <blockquote class="testimonial-card fade-up delay">
+          <p>"Chainguard helped us find critical issues before they reached production. The integration was seamless."</p>
+          <cite>— Alex, CTO at DevCorp</cite>
+        </blockquote>
+
+        <blockquote class="testimonial-card fade-up delay2">
+          <p>"Easy to onboard and the alerts are actionable. Our pipeline is safer now."</p>
+          <cite>— Priya, Security Engineer at FinCo</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container faq" aria-label="FAQ">
+      <h2 class="section-title fade-up">Frequently asked questions</h2>
+      <div class="faq-grid">
+        <details class="faq-item fade-up delay">
+          <summary>How does scanning work?</summary>
+          <div class="faq-body">We analyze dependencies and build artifacts using curated CVE data and provenance checks.</div>
+        </details>
+
+        <details class="faq-item fade-up delay2">
+          <summary>Can I integrate with GitHub Actions?</summary>
+          <div class="faq-body">Yes. We provide actions and CLI tools to integrate into CI pipelines.</div>
+        </details>
+
+        <details class="faq-item fade-up delay3">
+          <summary>Is there an on-prem option?</summary>
+          <div class="faq-body">Enterprise customers can request private deployments and dedicated support.</div>
+        </details>
+      </div>
+    </section>
   </main>
 
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+        <a href="/contact">Contact</a>
+        <a href="https://github.com/your-repo" target="_blank" rel="noopener">GitHub</a>
+      </div>
+
+      <div class="footer-credit">
+        <span>Built by <strong>Mahdi</strong>. Design enhancements by <strong>Copilot</strong>.</span>
+        <span class="small">© <span id="year"></span> Chainguard</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
   <script>
     // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Simple local waitlist storage (replace with Mailchimp later)
-    const form = document.getElementById("mc-form");
-    const email = document.getElementById("mc-email");
-    const feedback = document.getElementById("mc-feedback");
+    // Theme toggle (light/dark)
+    const themeToggle = document.getElementById('theme-toggle');
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      root.setAttribute('data-theme', savedTheme);
+      themeToggle.setAttribute('aria-pressed', savedTheme === 'dark');
+      themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+    }
 
-    form.addEventListener("submit", (e) => {
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      themeToggle.setAttribute('aria-pressed', next === 'dark');
+      themeToggle.textContent = next === 'dark' ? '☀️' : '🌙';
+    });
+
+    // Simple scroll animations using IntersectionObserver
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Mailchimp / waitlist handling
+    const mcForm = document.getElementById('mc-form');
+    const mcEmail = document.getElementById('mc-email');
+    const mcFeedback = document.getElementById('mc-feedback');
+
+    mcForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const value = email.value.trim();
+      const email = mcEmail.value.trim();
+      if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+        mcFeedback.textContent = 'Please enter a valid email address.';
+        return;
+      }
+      mcFeedback.textContent = 'Submitting...';
 
-      if (!value || !/^\S+@\S+\.\S+$/.test(value)) {
-        feedback.textContent = "Please enter a valid email.";
+      // Replace MAILCHIMP_URL with your Mailchimp form action if available
+      const MAILCHIMP_URL = ''; // e.g. 'https://xxxx.usX.list-manage.com/subscribe/post?u=XXX&id=YYY'
+      if (MAILCHIMP_URL) {
+        // open in new tab to avoid CORS issues
+        const url = MAILCHIMP_URL + '&EMAIL=' + encodeURIComponent(email);
+        window.open(url, '_blank');
+        mcFeedback.textContent = 'Thanks — check your email to confirm.';
+        mcEmail.value = '';
         return;
       }
 
-      const list = JSON.parse(localStorage.getItem("waitlist") || "[]");
-      list.push({ email: value, ts: Date.now() });
-      localStorage.setItem("waitlist", JSON.stringify(list));
-
-      feedback.textContent = "Thanks — you're on the waitlist!";
-      email.value = "";
+      // Local fallback storage
+      try {
+        const list = JSON.parse(localStorage.getItem('chainguard_waitlist') || '[]');
+        list.push({ email, ts: Date.now() });
+        localStorage.setItem('chainguard_waitlist', JSON.stringify(list));
+        mcFeedback.textContent = 'Thanks — your email is saved locally. Add MAILCHIMP_URL to send centrally.';
+        mcEmail.value = '';
+      } catch (err) {
+        mcFeedback.textContent = 'Submission failed. Try again later.';
+      }
     });
   </script>
+
+  <!-- Analytics placeholder -->
+  <!-- <script async defer data-domain="YOUR_DOMAIN" src="https://plausible.io/js/plausible.js"></script> -->
+
+  <!-- Sentry placeholder -->
+  <!-- <script src="https://browser.sentry-cdn.com/7.x.x/bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    Sentry.init({ dsn: 'YOUR_SENTRY_DSN', tracesSampleRate: 0.0 });
+  </script> -->
 
 </body>
 </html>
